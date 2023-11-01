@@ -59,7 +59,6 @@ const updateCommentReplies = (comments, parentId, content) => {
   return comments.map((comment) => {
     if (comment.id == parentId) {
       content.replyingTo = comment.user.username;
-      // console.log(content.replyingTo);
       const updatedReplies = [...comment.replies, content];
       return { ...comment, replies: [...updatedReplies] };
     }
@@ -77,42 +76,6 @@ const updateCommentReplies = (comments, parentId, content) => {
 
     return comment;
   });
-  // for (const comment of comments) {
-  //   if (comment.id == parentId) {
-  //     return { ...comment, replies: comment.replies.push(content) };
-  //   }
-  //   if (comment.replies && comment.replies > 0) {
-  //     const updatedReplies = updateCommentReplies(
-  //       comment.replies,
-  //       parentId,
-  //       content
-  //     );
-  //     if (updatedReplies) {
-  //       return { comment, replies: [...updatedReplies] };
-  //     }
-  //   }
-
-  //   return comment;
-  // }
-  // return comments.map((comment) => {
-  //   if (comment.id == parentId) {
-  //     const newreplies = comment.replies.push(content);
-
-  //     return { ...comment, replies: [...newreplies] };
-  //   }
-  //   if (comment.replies?.length > 0) {
-  //     const updatedReplies = updateCommentScore(
-  //       comment.replies,
-  //       parentId,
-  //       content
-  //     );
-  //     if (updatedReplies) {
-  //       return { ...comment, replies: [...updatedReplies] };
-  //     }
-  //   }
-
-  //   return comment;
-  // });
 };
 
 // function for deleting a single comment

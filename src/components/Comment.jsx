@@ -115,8 +115,9 @@ const Comment = ({
             <>
               <textarea
                 value={editContent}
+                rows="auto"
                 onChange={(e) => seteditContent(e.target.value)}
-                className="input_textarea  resize"
+                className="input_textarea  resize-none m-2 min-h-[9rem] h-auto"
               />
               <button className="self-end input_btn" onClick={handleEdit}>
                 update
