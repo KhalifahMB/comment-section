@@ -4,10 +4,10 @@
 
 @layer components {
   .comment {
-    @apply w-full bg-white p-3 gap-3 rounded-xl;
+    @apply bg-white p-3 gap-3 w-full h-full rounded-xl;
   }
   .comment_score {
-    @apply flex items-center  rounded-xl md:flex-col bg-verylightgray p-3 gap-3 h-fit py-5 w-fit;
+    @apply flex items-center  rounded-xl md:flex-col bg-verylightgray  gap-2 p-2   w-fit;
   }
   .icon {
     @apply w-6 h-6;
@@ -67,7 +67,15 @@
 
 .comment {
   display: grid;
-  grid-template-areas: "comment_user_info comment_user_info   " "comment_details comment_details" "comment_score comment_utils";
+  /* align-items: flex-start; */
+  /* align-content: flex-start; */
+  justify-content: flex-start;
+  /* justify-items: flex-start; */
+  grid-template-areas:
+    "comment_user_info comment_user_info"
+    "comment_details   comment_details"
+    "comment_score     comment_utils";
+  grid-template-columns: 1fr 1fr;
 }
 .comment_contentcomment_score {
   grid-area: comment_score;
@@ -90,7 +98,7 @@
     grid-template-areas:
       "comment_score comment_user_info comment_utils  "
       "comment_score comment_details comment_details";
-    grid-template-columns: auto;
+    grid-template-columns: auto 1fr auto;
     grid-template-rows: 1.5rem 2fr;
   }
 }

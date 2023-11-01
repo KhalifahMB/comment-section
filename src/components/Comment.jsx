@@ -57,7 +57,7 @@ const Comment = ({
 
   return (
     <>
-      <div className=" comment ">
+      <div className=" comment  ">
         <div className="comment_score">
           <img
             src={plusIcon}
